@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"io/ioutil"
+	"strings"
 	"time"
 	//"log"
 	"net/http"
@@ -55,6 +56,7 @@ func main() {
 	})
 	e.GET("/files", func(c echo.Context) error {
 		name := c.FormValue("dir")
+		name = strings.Replace(name, "../", "", -1)
 		c.Response().Header().Set(echo.HeaderContentType, echo.MIMEApplicationJSONCharsetUTF8)
 		c.Response().WriteHeader(http.StatusOK)
 		return json.NewEncoder(c.Response()).Encode(listFiles(name))
