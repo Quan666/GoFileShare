@@ -4,6 +4,6 @@
 
 ## 打包
 
-go build -trimpath -ldflags "-s -w" GoFileShare.go
+go build -trimpath -ldflags "-s -w" -o "GoFileShare.exe" main.go
 
 upx GoFileShare.exe
