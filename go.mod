@@ -1,3 +1,7 @@
 module github.com/Quan666/GoFileShare
 
 go 1.16
+
+require (
+	github.com/labstack/echo v4.3.0
+)
