@@ -4,6 +4,6 @@
 
 ## 打包
 
-go build -trimpath -ldflags "-s -w" httpServer.go
+go build -trimpath -ldflags "-s -w" GoFileShare.go
 
-upx httpServer.exe
+upx GoFileShare.exe
