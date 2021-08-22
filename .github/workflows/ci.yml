@@ -48,12 +48,3 @@ jobs:
         with:
           name: ${{ matrix.goos }}_${{ matrix.goarch }}
           path: output/
-      - name: Upload release asset
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ matrix.goos }}_${{ matrix.goarch }}
-          tag: ${{ github.ref }}
-          file_glob: true
-          overwrite: true
-          release_name: ${{ github.ref }}
